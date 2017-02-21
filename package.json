@@ -1,0 +1,29 @@
+{
+  "name": "react-monitor-promise",
+  "version": "0.1.0",
+  "description": "React HoC for monitor promise state",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "clean": "rimraf lib",
+    "lint": "tslint -c tslint.json \"src/**/*.ts\"",
+    "build": "tsc",
+    "prepublish": "npm run clean && npm run build"
+  },
+  "author": "Giff Song <giff.song@gmail.com>",
+  "license": "MIT",
+  "repository": "pawsong/react-monitor-promise",
+  "files": [
+    "src",
+    "lib"
+  ],
+  "dependencies": {
+    "@types/react": "^15.0.11",
+    "hoist-non-react-statics": "^1.2.0"
+  },
+  "devDependencies": {
+    "rimraf": "^2.6.0",
+    "tslint": "^4.4.2",
+    "typescript": "^2.1.6"
+  }
+}
