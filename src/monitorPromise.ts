@@ -27,8 +27,9 @@ export interface PromiseFactoryMap {
 function monitorPromise(promiseFactoryToState: PromiseFactoryMap) {
   const factoryNames = Object.keys(promiseFactoryToState);
 
-  // tslint:disable-next-line variable-name
-  return <P>(WrappedComponent: ComponentClass<P> | StatelessComponent<P>): ComponentClass<P> => {
+  return <P, TComponentConstruct extends (ComponentClass<P> | StatelessComponent<P>)>(
+    WrappedComponent: TComponentConstruct,
+  ): TComponentConstruct => {
     class MonitorPromise extends Component<any, MonitorPromiseState> {
       unmount: boolean;
       instrumentedFactories: { [index: string]: (...args: any[]) => Promise<any> };

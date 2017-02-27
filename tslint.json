@@ -5,7 +5,7 @@
     "curly": false,
     "interface-name": [false],
     "member-access": false,
-    "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore"],
+    "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore", "allow-pascal-case"],
     "no-var-requires": false,
     "object-literal-sort-keys": false,
     "no-bitwise": false
