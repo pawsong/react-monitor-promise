@@ -1,4 +1,4 @@
-import hoistStatics from 'hoist-non-react-statics';
+import * as hoistStatics from 'hoist-non-react-statics';
 import * as React from 'react';
 import { Component, ComponentClass, createElement, StatelessComponent } from 'react';
 
@@ -129,7 +129,7 @@ function monitorPromise(promiseFactoryToState: PromiseFactoryMap) {
     (MonitorPromise as any).WrappedComponent = WrappedComponent;
     (MonitorPromise as any).displayName = `MonitorPromise(${getDisplayName(WrappedComponent)})`;
 
-    return hoistStatics(MonitorPromise, WrappedComponent) as TComponentConstruct;
+    return (hoistStatics as any)(MonitorPromise, WrappedComponent);
   };
 }
 
