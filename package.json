@@ -1,6 +1,6 @@
 {
   "name": "react-monitor-promise",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "React HoC for monitor promise state",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
