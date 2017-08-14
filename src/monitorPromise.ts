@@ -1,4 +1,4 @@
-import * as hoistStatics from 'hoist-non-react-statics';
+import hoistStatics from 'hoist-non-react-statics';
 import * as React from 'react';
 import { Component, ComponentClass, createElement, StatelessComponent } from 'react';
 
@@ -71,7 +71,7 @@ function monitorPromise(promiseFactoryToState: PromiseFactoryMap) {
           const factory = this.props[factoryName];
 
           // tslint:disable-next-line only-arrow-functions
-          self.instrumentedFactories[factoryName] = function () {
+          self.instrumentedFactories[factoryName] = function() {
             const promise: Promise<any> = factory.apply(this, arguments);
 
             self.setState({
@@ -129,7 +129,7 @@ function monitorPromise(promiseFactoryToState: PromiseFactoryMap) {
     (MonitorPromise as any).WrappedComponent = WrappedComponent;
     (MonitorPromise as any).displayName = `MonitorPromise(${getDisplayName(WrappedComponent)})`;
 
-    return hoistStatics(MonitorPromise, WrappedComponent);
+    return hoistStatics(MonitorPromise, WrappedComponent) as TComponentConstruct;
   };
 }
 
